@@ -5,6 +5,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: Poppins;
+  user-select: none;
 }
 
 html {
@@ -25,6 +26,11 @@ body {
   box-shadow: 0 0 32px #b1b1b1;
   padding: 2.5rem 3.5rem;
   border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 2.4rem;
 }
 
 .search {
@@ -62,4 +68,61 @@ input::-webkit-search-cancel-button {
 .search-icon {
   height: 40%;
   width: 40%;
+}
+
+.weather {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.weather-icon {
+  height: 18rem;
+  width: 18rem;
+  margin-top: 1.8rem;
+}
+
+h1 {
+  font-size: 4.8rem;
+  font-weight: 400;
+  color: royalblue;
+}
+
+h2 {
+  font-weight: 500;
+  font-size: 2.4rem;
+  color: royalblue;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 4.8rem;
+  width: 100%;
+}
+
+.detail {
+  height: 3.2rem;
+  width: 3.2rem;
+}
+
+.col {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.8rem;
+}
+
+div p {
+  color: royalblue;
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+
+@media (max-width: 440px) {
+  html {
+    font-size: 50%;
+  }
 }
