@@ -126,3 +126,8 @@ div p {
     font-size: 50%;
   }
 }
+
+.weather,
+.footer {
+  display: none;
+}
