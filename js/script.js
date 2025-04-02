@@ -92,6 +92,13 @@ const keyClick = (e) => {
       data.toLowerCase().startsWith(userData.toLowerCase())
     );
 
+    if (emptyArray.length === 0) {
+      // If no matches found, clear the suggestions
+      box.classList.remove("show");
+      box.innerHTML = "";
+      return;
+    }
+
     emptyArray = emptyArray.map((data) => `<li>${data}</li>`);
 
     box.classList.add("show");
@@ -101,6 +108,7 @@ const keyClick = (e) => {
       item.addEventListener("click", () => {
         searchBar.value = item.textContent;
         box.classList.remove("show");
+        checkWeather();
       });
     });
   } else {
