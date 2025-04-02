@@ -81,3 +81,22 @@ searchBar.addEventListener("keypress", (e) => {
   if (e.key === "Enter") checkWeather();
 });
 window.addEventListener("load", animate);
+
+const keyClick = (e) => {
+  const userData = e.target.value;
+  let emptyArray = [];
+
+  if (userData) {
+    emptyArray = places.filter((data) => {
+      return data.toLowerCase().startsWith(userData.toLowerCase());
+    });
+
+    emptyArray = emptyArray.map((data) => {
+      return `<li>${data}</li>`;
+    });
+
+    document.querySelector(".autobox").innerHTML = emptyArray; // Join and update innerHTML
+  }
+};
+
+searchBar.addEventListener("keyup", keyClick);
