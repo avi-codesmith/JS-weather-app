@@ -45,7 +45,7 @@ body {
 
 .auto-box {
   background-color: #fff;
-  width: 91%;
+  width: 100%;
   border-radius: 0 0 5px 5px;
   padding: 1rem;
   font-size: 16px;
@@ -53,15 +53,21 @@ body {
   margin: 0;
   margin-top: -6px;
   list-style: none;
+  position: absolute;
+  top: 102%;
+  z-index: 999;
+  opacity: 0;
+  pointer-events: none;
 }
 
 input {
   height: 4.2rem;
-  width: 80%;
+  width: 88.5%;
   border-radius: 5px;
   outline: none;
   border: none;
   padding: 1rem;
+  padding-left: 1.5rem;
   font-size: 16px;
   color: #333;
   margin-right: 2px;
@@ -72,14 +78,23 @@ input::-webkit-search-cancel-button {
 }
 
 .search-icon {
-  height: 4rem;
-  width: 4rem;
+  height: 4.2rem;
+  width: 4.2rem;
   position: absolute;
   padding: 1rem;
   top: 0;
-  right: 9%;
+  right: 0;
   border-radius: 0 5px 5px 0;
   background-color: #fff;
+  cursor: pointer;
+}
+
+li {
+  padding: 6px;
+}
+
+li:hover {
+  background-color: #eee;
 }
 
 .weather {
@@ -150,7 +165,7 @@ div p {
   height: 42px;
   width: 42px;
   background-color: transparent;
-  border: 3px solid #ddd;
+  border: 3px solid #fff;
   border-radius: 50%;
   border-top-color: royalblue;
   animation: rotate 1s infinite;
