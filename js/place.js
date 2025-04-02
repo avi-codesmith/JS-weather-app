@@ -20,6 +20,7 @@ let places = [
   "Indore",
   "Visakhapatnam",
   "Thiruvananthapuram",
+  "Noida",
 
   // Major Cities Around the World
   "New York",

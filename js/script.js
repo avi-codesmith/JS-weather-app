@@ -13,6 +13,7 @@ const sound = new Audio("errorSound.mp3");
 const apiKey = "5af10595b772849237523885a0dcaf6c";
 const loader = document.createElement("div");
 const body = document.querySelector(".wrapper");
+const box = document.querySelector(".auto-box");
 
 loader.classList.add("loader");
 
@@ -83,19 +84,28 @@ searchBar.addEventListener("keypress", (e) => {
 window.addEventListener("load", animate);
 
 const keyClick = (e) => {
-  const userData = e.target.value;
+  const userData = e.target.value.trim();
   let emptyArray = [];
 
   if (userData) {
-    emptyArray = places.filter((data) => {
-      return data.toLowerCase().startsWith(userData.toLowerCase());
-    });
+    emptyArray = places.filter((data) =>
+      data.toLowerCase().startsWith(userData.toLowerCase())
+    );
 
-    emptyArray = emptyArray.map((data) => {
-      return `<li>${data}</li>`;
-    });
+    emptyArray = emptyArray.map((data) => `<li>${data}</li>`);
 
-    document.querySelector(".autobox").innerHTML = emptyArray; // Join and update innerHTML
+    box.classList.add("show");
+    box.innerHTML = emptyArray.join("");
+
+    document.querySelectorAll(".auto-box li").forEach((item) => {
+      item.addEventListener("click", () => {
+        searchBar.value = item.textContent;
+        box.classList.remove("show");
+      });
+    });
+  } else {
+    box.classList.remove("show");
+    box.innerHTML = "";
   }
 };
 

@@ -60,6 +60,11 @@ body {
   pointer-events: none;
 }
 
+.show {
+  opacity: 1 !important;
+  pointer-events: all !important;
+}
+
 input {
   height: 4.2rem;
   width: 88.5%;
